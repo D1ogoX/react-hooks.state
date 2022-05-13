@@ -1,32 +1,27 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
-export default function App(){
+export default function App()
+{
+    //Não pode ser criado sob condições (If)
+    const [valor, setValor] = useState(10)
 
-    const [valor, setValor] = useState(0)
+    function decremento ()
+    {
+        setValor(valor - 1)
+    }
 
-    //var valor = 0;
-
-    //function incrementar()
-    //{
-    //    valor++
-
-    //    console.log(valor)
-    //}
-
-    function incrementar()
+    function incremento ()
     {
         setValor(valor + 1)
-
-        console.log(valor)
     }
 
     return (
         <>
             <h1>React Hooks</h1>
+            <p>Valor: {valor}</p>
 
-            <h3>Valor = {valor}</h3>
-
-            <button onClick={incrementar}>Incrementar</button>
+            <button onClick={decremento}>Decremento</button>
+            <button onClick={incremento}>Incremento</button>
         </>
     )
 }
