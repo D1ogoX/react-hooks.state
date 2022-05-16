@@ -3,25 +3,25 @@ import React, { useState } from "react"
 export default function App()
 {
     //Não pode ser criado sob condições (If)
-    const [valor, setValor] = useState(10)
+    const [valor, setValor] = useState(100)
 
-    function decremento ()
+    function diminuir ()
     {
-        setValor(valor - 1)
+        setValor(valorAntigo => valorAntigo - 1)
     }
 
-    function incremento ()
+    function aumentar ()
     {
-        setValor(valor + 1)
+        setValor(valorAntigo => valorAntigo + 1)
     }
 
     return (
         <>
-            <h1>React Hooks</h1>
-            <p>Valor: {valor}</p>
+            <h1>React Hooks - useState</h1>
 
-            <button onClick={decremento}>Decremento</button>
-            <button onClick={incremento}>Incremento</button>
+            <button onClick={diminuir}>Diminuir</button>
+            <span>{valor}</span>
+            <button onClick={aumentar}>Incremento</button>
         </>
     )
 }
